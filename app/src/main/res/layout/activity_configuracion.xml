@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".configuracion">
+
+    <EditText
+        android:id="@+id/inCantidadComida"
+        android:layout_width="201dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Ej: 300 (en gramos)"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="329dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/inputPorcion"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inNombreMascota" />
+
+    <include
+        android:id="@+id/include3"
+        layout="@layout/toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/inNombreMascota"
+        android:layout_width="269dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Ej: Jack"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="340dp"
+        android:text="@string/nombreMascota"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAlimento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include3" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/modoAlimentacion"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inCantidadComida" />
+
+    <RadioButton
+        android:id="@+id/radioAutomatico"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:checked="true"
+        android:onClick="botonRadioChequeado"
+        android:text="@string/alimentoAutomatico"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.308"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+    <RadioButton
+        android:id="@+id/radioProgramado"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:onClick="botonRadioChequeado"
+        android:text="@string/alimentoProgramado"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.274"
+        app:layout_constraintStart_toEndOf="@+id/radioAutomatico"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+    <Button
+        android:id="@+id/btnAlimento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="55dp"
+        android:text="@string/programar"
+        app:icon="@drawable/ic_baseline_more_time_24"
+        app:layout_constraintBottom_toTopOf="@+id/btnRestablecer"
+        app:layout_constraintEnd_toEndOf="@+id/radioProgramado"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <Button
+        android:id="@+id/btnRestablecer"
+        android:layout_width="197dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="129dp"
+        android:text="@string/restablecerCambios"
+        app:icon="@drawable/ic_baseline_redo_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnAplicar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAlimento" />
+
+    <Button
+        android:id="@+id/btnAplicar"
+        android:layout_width="180dp"
+        android:layout_height="59dp"
+        android:layout_marginEnd="28dp"
+        android:onClick="cambios"
+        android:text="@string/aplicarCambios"
+        app:icon="@drawable/ic_baseline_check_24"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnRestablecer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnRestablecer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

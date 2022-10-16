@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Historico">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView48"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grafico de movimiento en tiempo real:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="414dp"
+            android:layout_height="368dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:translationY="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:context=".TableViewActivity">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@android:color/holo_orange_light"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/tituloTablaComidas"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seleccione dia a revisar:"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinnerDia"
+                android:layout_width="318dp"
+                android:layout_height="wrap_content"
+                android:entries="@array/dias"
+                android:minHeight="48dp"
+                android:translationX="40dp" />
+
+            <TableLayout
+                android:id="@+id/tablaHistorica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:stretchColumns="1">
+
+                <TableRow
+
+                    android:id="@+id/firstRow"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="37dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="1"
+                        android:background="#b0b0b0"
+                        android:gravity="center"
+                        android:paddingStart="3dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="3dp"
+                        android:paddingBottom="10dp"
+                        android:text="Hora de activacion"
+                        android:textColor="#424242"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="2"
+                        android:background="#b0b0b0"
+                        android:gravity="center"
+                        android:paddingStart="3dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="3dp"
+                        android:paddingBottom="10dp"
+                        android:text="Cantidad"
+                        android:textColor="#424242"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/hora1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="13:00"
+
+                        android:translationX="60dp" />
+
+                    <TextView
+                        android:id="@+id/cantidad1"
+                        android:layout_width="177dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="80 grs."
+                        android:textAlignment="center"
+                        android:translationX="60dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/hora2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="15:00"
+
+                        android:translationX="60dp" />
+
+                    <TextView
+                        android:id="@+id/cantidad2"
+                        android:layout_width="177dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="20 grs."
+                        android:textAlignment="center"
+                        android:translationX="60dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/hora3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="16:00"
+
+                        android:translationX="60dp" />
+
+                    <TextView
+                        android:id="@+id/cantidad3"
+                        android:layout_width="177dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="10 grs."
+                        android:textAlignment="center"
+                        android:translationX="60dp" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="51dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                android:translationX="280dp" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="53dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_baseline_arrow_forward_24"
+                android:translationX="330dp"
+                android:translationY="-36dp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="357dp"
+            android:layout_height="205dp"
+            android:src="@drawable/grafico"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
