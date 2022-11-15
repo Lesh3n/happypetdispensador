@@ -42,7 +42,7 @@ public class configuracion extends AppCompatActivity {
         //Integer cantidadAlimento = campoAlimento.getText();
 
         Intent i = new Intent(this,Inicio.class);
-        startActivity(i);
+        startActivity(i); // Cambiar por fragment manager
     }
 
     public void botonRadioChequeado(View vista){

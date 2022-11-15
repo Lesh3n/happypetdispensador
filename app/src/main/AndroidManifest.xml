@@ -25,6 +25,7 @@
         <activity
             android:name=".configBt"
             android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
