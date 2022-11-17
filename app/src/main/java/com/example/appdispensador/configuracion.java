@@ -41,8 +41,7 @@ public class configuracion extends AppCompatActivity {
         EditText campoAlimento = this.findViewById(R.id.inCantidadComida);
         //Integer cantidadAlimento = campoAlimento.getText();
 
-        Intent i = new Intent(this,Inicio.class);
-        startActivity(i); // Cambiar por fragment manager
+        finish();
     }
 
     public void botonRadioChequeado(View vista){
