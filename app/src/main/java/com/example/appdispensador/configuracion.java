@@ -39,6 +39,7 @@ public class configuracion extends AppCompatActivity {
 
         //Agarrar cambios de cantidad de comida a consumir
         EditText campoAlimento = this.findViewById(R.id.inCantidadComida);
+        int cantAlimento = Integer.parseInt(campoAlimento.getText().toString());
         //Integer cantidadAlimento = campoAlimento.getText();
 
         finish();
