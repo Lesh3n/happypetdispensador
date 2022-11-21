@@ -15,13 +15,28 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class principal extends AppCompatActivity {
     TextView vistaTextoTitulo;
-    public String nMascota = "Jack";
+    private String nMascota = "Jack";
+    FirebaseDatabase db;
+    DatabaseReference dbr;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Llamar variable con nombre mascota
+        //db = FirebaseDatabase.getInstance();
+
+        //dbr = db.getReference("nombreMascota");
+
+        //nMascota = findViewById(R.id.)
+
+        //DatabaseReference nMascota = FirebaseDatabase.getInstance().getReference("Configuracion/c1/nombreMascota");
+
         setContentView(R.layout.activity_principal);
         //Referencia al toolbar
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
@@ -111,5 +126,7 @@ public class principal extends AppCompatActivity {
     public void btnAlimento(View view) {
         Toast.makeText(this,"Se ha alimentado a la mascota exitosamente.", Toast.LENGTH_SHORT).show();
     }
+
+    //private void sacarNombreMascota()
 
 }
