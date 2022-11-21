@@ -15,6 +15,7 @@ import com.example.appdispensador.Modelos.Config;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+
 public class configuracion extends AppCompatActivity {
     Button botonProgramar,btnAplicar;
     EditText etNombre,etComida;

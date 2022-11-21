@@ -129,11 +129,15 @@
             app:layout_constraintTop_toBottomOf="@+id/btnAlimentar" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerComidas"
+            android:id="@+id/recyclerView"
             android:layout_width="314dp"
             android:layout_height="285dp"
-            tools:layout_editor_absoluteX="48dp"
-            tools:layout_editor_absoluteY="396dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView22"
+            app:layout_constraintVertical_bias="0.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

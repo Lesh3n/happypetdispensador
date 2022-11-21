@@ -15,14 +15,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+//import com.google.firebase.database.DatabaseReference;
+//import com.google.firebase.database.FirebaseDatabase;
 
 public class principal extends AppCompatActivity {
     TextView vistaTextoTitulo;
     private String nMascota = "Jack";
-    FirebaseDatabase db;
-    DatabaseReference dbr;
+    //FirebaseDatabase db;
+    //DatabaseReference dbr;
 
 
     @Override
