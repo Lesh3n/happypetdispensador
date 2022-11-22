@@ -39,6 +39,12 @@ public class configuracion extends AppCompatActivity {
 
         //BOTONES
         botonProgramar = findViewById(R.id.btnAlimento);
+        botonProgramar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialogMenu();
+            }
+        });
         botonProgramar.setEnabled(false);
 
         //Boton aplicar
@@ -53,6 +59,11 @@ public class configuracion extends AppCompatActivity {
 
     }
 
+    public void dialogMenu(){
+        dialogConfigComidas d = new dialogConfigComidas();
+        d.show(getSupportFragmentManager(), "Dialog config comidas");
+    }
+
     public void setTitulo(String title) {
 
         vistaTextoTitulo.setText(title);
@@ -61,7 +72,6 @@ public class configuracion extends AppCompatActivity {
 
     public void insertar(){
         //Agarra los cambios realizados en los campos
-        //QUEDE AQUÍ
         String id = "c1";
         String nombre = etNombre.getText().toString();
         int cantAlimento = Integer.parseInt(etComida.getText().toString());
@@ -73,7 +83,7 @@ public class configuracion extends AppCompatActivity {
         myRef.child(id).setValue(c);
 
         //Cerrar activity
-        finish();
+        finish(); //TODO: me da fatal exception al presionar el guardar cambios por algún extraño motivo
     }
 
     public void botonRadioChequeado(View vista){
@@ -92,6 +102,8 @@ public class configuracion extends AppCompatActivity {
                     botonProgramar.setEnabled(false);
                     break;
     }
+
+
 
 
 }

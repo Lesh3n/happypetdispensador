@@ -39,31 +39,12 @@ public class Inicio extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //recyclerView = findViewById(R.id.recyclerView); //Esto tiene el problema
-       /* recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-        comidas = new ArrayList<>();
-        databaseReference = configuracionFirebase.getFirebaseDatabase();
-        databaseReference.child("Horas").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot dn:snapshot.getChildren()){
-                    Comidas c = dn.getValue(Comidas.class);
-                    comidas.add(c);
-                    comidaAdapter = new comidaAdapter(comidas);
-                    recyclerView.setAdapter(comidaAdapter);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });*/
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //Este es el OnCreate de los fragmentos, aquí debe ir everything.
+
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_inicio, container, false);
         recyclerView = v.findViewById(R.id.recyclerView);
@@ -83,7 +64,7 @@ public class Inicio extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                avisoError();
             }
         });
         return v;
@@ -92,5 +73,9 @@ public class Inicio extends Fragment {
 
     public void btnAlimento (View v){
         Toast.makeText(this.requireActivity(), "Se ha alimentado a la mascota exitosamente.", Toast.LENGTH_SHORT).show();
+    }
+
+    public void avisoError(){
+        Toast.makeText(this.requireActivity(), "Hubo un error en la base de datos.", Toast.LENGTH_SHORT).show();
     }
 }
