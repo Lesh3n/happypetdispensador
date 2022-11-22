@@ -42,7 +42,7 @@ public class configuracion extends AppCompatActivity {
         botonProgramar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialogMenu();
+                configHora();
             }
         });
         botonProgramar.setEnabled(false);
@@ -59,16 +59,18 @@ public class configuracion extends AppCompatActivity {
 
     }
 
-    public void dialogMenu(){
-        dialogConfigComidas d = new dialogConfigComidas();
-        d.show(getSupportFragmentManager(), "Dialog config comidas");
-    }
-
     public void setTitulo(String title) {
 
         vistaTextoTitulo.setText(title);
 
     }
+
+    //Invocar activity config hora
+    public void configHora(){
+        Intent i = new Intent(this,activityConfigHora.class);
+        startActivity(i);
+    }
+
 
     public void insertar(){
         //Agarra los cambios realizados en los campos
@@ -83,7 +85,7 @@ public class configuracion extends AppCompatActivity {
         myRef.child(id).setValue(c);
 
         //Cerrar activity
-        finish(); //TODO: me da fatal exception al presionar el guardar cambios por algún extraño motivo
+        finish(); //TODO: me da fatal exception al presionar el guardar cambios cuando no meto datos, probar usar try cache
     }
 
     public void botonRadioChequeado(View vista){

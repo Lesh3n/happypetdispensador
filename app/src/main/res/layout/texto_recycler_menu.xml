@@ -35,13 +35,13 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnDialogEditar"
+            android:id="@+id/btnConfigEditar"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:backgroundTint="@android:color/holo_blue_dark" />
 
         <Button
-            android:id="@+id/btnDialogBorrar"
+            android:id="@+id/btnConfigBorrar"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:backgroundTint="@android:color/holo_red_dark" />

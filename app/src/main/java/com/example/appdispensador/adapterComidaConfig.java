@@ -12,18 +12,18 @@ import com.example.appdispensador.Modelos.Comidas;
 
 import java.util.List;
 
-public class adapterComidaDialog extends RecyclerView.Adapter{
+public class adapterComidaConfig extends RecyclerView.Adapter{
 
     List<Comidas> comidas;
 
-    public adapterComidaDialog(List<Comidas> comidas) {
+    public adapterComidaConfig(List<Comidas> comidas) {
         this.comidas = comidas;
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.texto_dialog_menu,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.texto_recycler_menu,parent,false);
         ViewHolderClass vhclass = new ViewHolderClass(view);
         return vhclass;
     }
