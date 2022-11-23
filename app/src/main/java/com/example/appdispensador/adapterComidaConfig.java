@@ -20,16 +20,15 @@ public class adapterComidaConfig extends RecyclerView.Adapter{
         this.comidas = comidas;
     }
 
-    @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.texto_recycler_menu,parent,false);
         ViewHolderClass vhclass = new ViewHolderClass(view);
         return vhclass;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ViewHolderClass vhClass = (ViewHolderClass) holder;
         Comidas comida = comidas.get(position);
         vhClass.dialogHora.setText(comida.getHora());
@@ -44,7 +43,7 @@ public class adapterComidaConfig extends RecyclerView.Adapter{
     public class ViewHolderClass extends RecyclerView.ViewHolder{
         TextView dialogHora;
 
-        public ViewHolderClass(@NonNull View itemView) {
+        public ViewHolderClass(View itemView) {
             super(itemView);
             dialogHora = itemView.findViewById(R.id.dialogHora);
         }

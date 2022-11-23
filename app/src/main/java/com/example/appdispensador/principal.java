@@ -1,9 +1,7 @@
 package com.example.appdispensador;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
 
 
 import android.content.Intent;
@@ -107,7 +105,7 @@ public class principal extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId(); //Recuperar el ID de la opcion seleccionada.
         if (id == R.id.opConfig){
             Intent i = new Intent(this,configuracion.class);

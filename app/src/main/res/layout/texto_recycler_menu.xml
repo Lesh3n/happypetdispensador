@@ -29,22 +29,26 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="end"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnConfigEditar"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:backgroundTint="@android:color/holo_blue_dark" />
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:translationX="-30dp"
+            app:icon="@drawable/ic_baseline_edit_24" />
 
         <Button
             android:id="@+id/btnConfigBorrar"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:backgroundTint="@android:color/holo_red_dark" />
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:translationX="-20dp"
+            app:icon="@drawable/ic_baseline_delete_24" />
     </LinearLayout>
 
 </LinearLayout>

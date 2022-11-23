@@ -1,5 +1,6 @@
 package com.example.appdispensador;
 
+//import androidx.annotation.
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,21 +9,24 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.appdispensador.Modelos.Comidas;
 import com.example.appdispensador.cfg.configuracionFirebase;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-//TODO: Revisar si muestra datos, falta agregar datos a la base de datos, eliminarlos y modificarlos.
-//TODO: También, falta hacer una dialog box con una entrada de texto y un botón para insertar los datos en el firebase.
+//TODO: MODIFICAR DATOS EN LA BASE DE DATOS Y BORRARLOS.
 
 
 
@@ -36,6 +40,7 @@ public class activityConfigHora extends AppCompatActivity {
     adapterComidaConfig comidaAdapter;
     DatabaseReference databaseReference;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,12 +50,20 @@ public class activityConfigHora extends AppCompatActivity {
         //vistaTextoTitulo = (TextView) findViewById(R.id.tituloTb);
 
         fab = findViewById(R.id.fab);
-        /*fab.setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Poner aquí la invocación del dialog
+                dialogEntradaDatos();
             }
-        });*/
+        });
+
+        btnConfigBorrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //borrarRegistro();
+            }
+        });
     }
 
     public void mostrarDatos(){
@@ -60,7 +73,7 @@ public class activityConfigHora extends AppCompatActivity {
         databaseReference = configuracionFirebase.getFirebaseDatabase();
         databaseReference.child("Horas").child("").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            public void onDataChange(DataSnapshot snapshot) {
                 for(DataSnapshot dn:snapshot.getChildren()){
                     Comidas c = dn.getValue(Comidas.class);
                     comidas.add(c);
@@ -69,15 +82,29 @@ public class activityConfigHora extends AppCompatActivity {
                 }
             }
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onCancelled(DatabaseError error) {
 
             }
         });
     }
 
+
+    //Cambiar nombre a toolbar
+
+
+
     //Dialog de inserción de horas
+    public void dialogEntradaDatos(){
+        dialogHora dialogoHora = new dialogHora();
+        dialogoHora.show(getSupportFragmentManager(), "Dialogo ingreso hora");
+    }
 
 
+
+    //Mensaje toast editable
+    private void mostrarToast(String mensaje){
+        Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
+    }
 
 
     //Agregar datos
@@ -90,4 +117,20 @@ public class activityConfigHora extends AppCompatActivity {
 
 
     //Eliminar datos
+    public void borrarRegistro(String key){
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Horas").child(key);
+        //Hacer tarea generica
+        Task<Void> mTarea = databaseReference.removeValue();
+        mTarea.addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                mostrarToast("Datos borrados");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                mostrarToast("Fallo el borrado.");
+            }
+        });
+    }
 }

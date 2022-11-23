@@ -3,7 +3,7 @@ package com.example.appdispensador.Modelos;
 import java.util.UUID;
 
 public class Comidas {
-    String Id;
+    String key;
     String Hora;
     String Estado;
 
@@ -12,8 +12,8 @@ public class Comidas {
     }
 
 
-    public Comidas(String Hora,String Estado,String Id){
-        this.Id = Id;
+    public Comidas(String key,String Hora,String Estado){
+        this.key = key;
         this.Hora = Hora;
         this.Estado = Estado;
     }
@@ -26,8 +26,8 @@ public class Comidas {
         return Estado;
     }
 
-    public String getId() {
-        return Id;
+    public String getKey() {
+        return key;
     }
 
     public void setHora(String hora) {
@@ -38,7 +38,7 @@ public class Comidas {
         Estado = estado;
     }
 
-    public void setId(String id) {
-        Id = id;
+    public void setKey(String key) {
+        key = key;
     }
 }

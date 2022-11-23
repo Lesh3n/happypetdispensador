@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appdispensador.Modelos.Comidas;
@@ -20,16 +20,15 @@ public class comidaAdapter extends RecyclerView.Adapter{
         this.comidas = comidas;
     }
 
-    @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.textos_comidas,parent,false);
         ViewHolderClass vhclass = new ViewHolderClass(view);
         return vhclass;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ViewHolderClass vhClass = (ViewHolderClass) holder;
         Comidas comida = comidas.get(position);
         vhClass.tvHora.setText(comida.getHora());
@@ -46,7 +45,7 @@ public class comidaAdapter extends RecyclerView.Adapter{
         TextView tvHora;
         TextView tvEstado;
 
-        public ViewHolderClass(@NonNull View itemView) {
+        public ViewHolderClass(View itemView) {
             super(itemView);
             tvHora = itemView.findViewById(R.id.tvHora);
             tvEstado = itemView.findViewById(R.id.tvEstado);
