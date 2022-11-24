@@ -39,7 +39,8 @@ public class activityConfigHora extends AppCompatActivity {
     RecyclerView recyclerView;
     adapterComidaConfig comidaAdapter;
     DatabaseReference databaseReference;
-
+    Comidas c;
+    String key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,13 +58,15 @@ public class activityConfigHora extends AppCompatActivity {
                 dialogEntradaDatos();
             }
         });
-
-        btnConfigBorrar.setOnClickListener(new View.OnClickListener() {
+        /*btnConfigBorrar = findViewById(R.id.btnConfigBorrar);
+        btnConfigBorrar.OnItemClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //borrarRegistro();
+                //String key = recyclerView.get;
+                //key = c.getKey();
+                //borrarRegistro(key);
             }
-        });
+        });*/
     }
 
     public void mostrarDatos(){

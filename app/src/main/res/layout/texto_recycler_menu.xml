@@ -9,7 +9,9 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:translationX="80dp"
+        android:translationY="8dp">
 
         <TextView
             android:id="@+id/textView36"
@@ -32,7 +34,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="end"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:translationX="-70dp">
 
         <Button
             android:id="@+id/btnConfigEditar"
