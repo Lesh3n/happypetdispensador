@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="end">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:translationX="80dp"
+        android:translationY="8dp">
+
+        <TextView
+            android:id="@+id/textView36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Hora:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/dialogHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:translationX="-70dp">
+
+        <Button
+            android:id="@+id/btnConfigEditar"
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:translationX="-30dp"
+            app:icon="@drawable/ic_baseline_edit_24" />
+
+        <Button
+            android:id="@+id/btnConfigBorrar"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:translationX="-20dp"
+            app:icon="@drawable/ic_baseline_delete_24" />
+    </LinearLayout>
+
+</LinearLayout>

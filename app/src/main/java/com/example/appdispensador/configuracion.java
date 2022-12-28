@@ -9,40 +9,83 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.appdispensador.Modelos.Config;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class configuracion extends AppCompatActivity {
-    Button botonProgramar;
+    Button botonProgramar,btnAplicar;
+    EditText etNombre,etComida;
     RadioButton radioProgramado;
     RadioButton radioAutomatico;
     TextView vistaTextoTitulo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
+
         vistaTextoTitulo = (TextView) findViewById(R.id.tituloTb);
+
+        //Id campos
+        etNombre = (EditText) this.findViewById(R.id.inNombreMascota);
+        etComida = (EditText) this.findViewById(R.id.inCantidadComida);
 
         setTitulo("Configuracion");
 
+        //BOTONES
         botonProgramar = findViewById(R.id.btnAlimento);
+        botonProgramar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                configHora();
+            }
+        });
         botonProgramar.setEnabled(false);
 
+        //Boton aplicar
+        btnAplicar = (Button) findViewById(R.id.btnAplicar);
+        btnAplicar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(configuracion.this, "Cambios guardados.", Toast.LENGTH_SHORT).show();
+                insertar();
+            }
+        });
+
     }
 
-    public void setTitulo(String title){
+    public void setTitulo(String title) {
+
         vistaTextoTitulo.setText(title);
+
     }
 
-    public void cambios(View v){
-        EditText campoNombreMascota = this.findViewById(R.id.inNombreMascota);
-        String nombreMascota = campoNombreMascota.getText().toString();
+    //Invocar activity config hora
+    public void configHora(){
+        Intent i = new Intent(this,activityConfigHora.class);
+        startActivity(i);
+    }
 
-        //Agarrar cambios de cantidad de comida a consumir
-        EditText campoAlimento = this.findViewById(R.id.inCantidadComida);
-        //Integer cantidadAlimento = campoAlimento.getText();
 
-        Intent i = new Intent(this,Inicio.class);
-        startActivity(i); // Cambiar por fragment manager
+    public void insertar(){
+        //Agarra los cambios realizados en los campos
+        String id = "c1";
+        String nombre = etNombre.getText().toString();
+        int cantAlimento = Integer.parseInt(etComida.getText().toString());
+        Config c = new Config(id,nombre,cantAlimento);
+
+        //Inserción a bdd
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = db.getReference("Configuracion");
+        myRef.child(id).setValue(c);
+
+        //Cerrar activity
+        finish(); //TODO: me da fatal exception al presionar el guardar cambios cuando no meto datos, probar usar try cache
     }
 
     public void botonRadioChequeado(View vista){
@@ -61,6 +104,8 @@ public class configuracion extends AppCompatActivity {
                     botonProgramar.setEnabled(false);
                     break;
     }
+
+
 
 
 }

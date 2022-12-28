@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "292699705526",
+    "project_id": "dispensadoralimento-a39ba",
+    "storage_bucket": "dispensadoralimento-a39ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292699705526:android:bd53b9aeac6ebc1304d617",
+        "android_client_info": {
+          "package_name": "com.example.appdispensador"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292699705526-p7omj8is4qlnpttukn8en6sp4r7iv803.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHk-ljN-DfjIefp8m9EoWJL7103RLG9PA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "292699705526-p7omj8is4qlnpttukn8en6sp4r7iv803.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

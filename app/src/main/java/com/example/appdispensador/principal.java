@@ -1,9 +1,7 @@
 package com.example.appdispensador;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
 
 
 import android.content.Intent;
@@ -16,13 +14,16 @@ import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
+
 public class principal extends AppCompatActivity {
     TextView vistaTextoTitulo;
-    public String nMascota = "Jack";
+    private String nMascota = "Jack";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+
         //Referencia al toolbar
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(tb);
@@ -64,9 +65,7 @@ public class principal extends AppCompatActivity {
                         setTitulo("Historico");
                         break;
                 }
-            } //hasta aqui quede, solo me falta poner las cosas en cada view y conectar actividades nuevas en el menu de 3 puntitos
-            // pense que esto iba a estar mas dificil de lo que aparentaba pero no, menos mal... ojala no se ponga tan complicado despues
-            // gracias a molchat doma por carrear este trabajo
+            }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
@@ -92,7 +91,7 @@ public class principal extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId(); //Recuperar el ID de la opcion seleccionada.
         if (id == R.id.opConfig){
             Intent i = new Intent(this,configuracion.class);
@@ -106,10 +105,6 @@ public class principal extends AppCompatActivity {
 
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void btnAlimento(View view) {
-        Toast.makeText(this,"Se ha alimentado a la mascota exitosamente.", Toast.LENGTH_SHORT).show();
     }
 
 }
