@@ -13,29 +13,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
-//import com.google.firebase.database.DatabaseReference;
-//import com.google.firebase.database.FirebaseDatabase;
+
 
 public class principal extends AppCompatActivity {
     TextView vistaTextoTitulo;
     private String nMascota = "Jack";
-    //FirebaseDatabase db;
-    //DatabaseReference dbr;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Llamar variable con nombre mascota
-        //db = FirebaseDatabase.getInstance();
-
-        //dbr = db.getReference("nombreMascota");
-
-        //nMascota = findViewById(R.id.)
-
-        //DatabaseReference nMascota = FirebaseDatabase.getInstance().getReference("Configuracion/c1/nombreMascota");
-
         setContentView(R.layout.activity_principal);
+
         //Referencia al toolbar
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(tb);
@@ -77,9 +65,7 @@ public class principal extends AppCompatActivity {
                         setTitulo("Historico");
                         break;
                 }
-            } //hasta aqui quede, solo me falta poner las cosas en cada view y conectar actividades nuevas en el menu de 3 puntitos
-            // pense que esto iba a estar mas dificil de lo que aparentaba pero no, menos mal... ojala no se ponga tan complicado despues
-            // gracias a molchat doma por carrear este trabajo
+            }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
@@ -120,11 +106,5 @@ public class principal extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    public void btnAlimento(View view) {
-        Toast.makeText(this,"Se ha alimentado a la mascota exitosamente.", Toast.LENGTH_SHORT).show();
-    }
-
-    //private void sacarNombreMascota()
 
 }

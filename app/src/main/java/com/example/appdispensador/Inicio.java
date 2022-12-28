@@ -9,9 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.appdispensador.Modelos.Comidas;
+import com.example.appdispensador.Modelos.Servir;
 import com.example.appdispensador.cfg.configuracionFirebase;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,6 +30,7 @@ public class Inicio extends Fragment {
     comidaAdapter comidaAdapter;
     FirebaseDatabase database;
     DatabaseReference databaseReference;
+    Button btnAlimentar;
 
     public Inicio() {
         // Required empty public constructor
@@ -45,6 +48,13 @@ public class Inicio extends Fragment {
 
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_inicio, container, false);
+        btnAlimentar = v.findViewById(R.id.btnAlimentar);
+        btnAlimentar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ingresarEstado();
+            }
+        });
         recyclerView = v.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         comidas = new ArrayList<>();
@@ -69,11 +79,19 @@ public class Inicio extends Fragment {
     }
 
 
-    public void btnAlimento (View v){
-        Toast.makeText(this.requireActivity(), "Se ha alimentado a la mascota exitosamente.", Toast.LENGTH_SHORT).show();
+    public void ingresarEstado(){
+        Boolean alimentar = true;
+        Servir s = new Servir(alimentar);
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = db.getReference("alimento");
+        myRef.setValue(s);
+        Toast.makeText(this.requireActivity(), "Mascota alimentada exitosamente!", Toast.LENGTH_SHORT).show();
+
     }
 
     public void avisoError(){
         Toast.makeText(this.requireActivity(), "Hubo un error en la base de datos.", Toast.LENGTH_SHORT).show();
     }
+
+
 }

@@ -107,7 +107,6 @@
             android:id="@+id/btnAlimentar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="btnAlimento"
             android:text="@string/alimentar"
             app:icon="@drawable/ic_baseline_pets_24"
             app:layout_constraintBottom_toBottomOf="parent"
