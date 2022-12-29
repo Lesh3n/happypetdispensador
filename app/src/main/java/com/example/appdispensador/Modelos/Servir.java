@@ -1,21 +1,21 @@
 package com.example.appdispensador.Modelos;
 
 public class Servir {
-    Boolean alimentar;
+    Integer alimentar;
 
     public Servir(){
 
     }
 
-    public Servir(Boolean alimentar){
+    public Servir(Integer alimentar){
         this.alimentar = alimentar;
     }
 
-    public Boolean getAlimentar() {
+    public Integer getAlimentar() {
         return alimentar;
     }
 
-    public void setAlimentar(Boolean alimentar) {
+    public void setAlimentar(Integer alimentar) {
         this.alimentar = alimentar;
     }
 }

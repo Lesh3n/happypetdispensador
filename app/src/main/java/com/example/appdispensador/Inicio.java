@@ -80,7 +80,7 @@ public class Inicio extends Fragment {
 
 
     public void ingresarEstado(){
-        Boolean alimentar = true;
+        Integer alimentar = 1;
         Servir s = new Servir(alimentar);
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         DatabaseReference myRef = db.getReference("alimento");
